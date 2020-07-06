@@ -1,0 +1,275 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%% SP 2008/03/01
+%%
+%%
+%%
+%% $Id: elsarticle-template-harv.tex 4 2009-10-24 08:22:58Z rishi $
+%%
+%%
+\documentclass[preprint,authoryear,12pt]{elsarticle/elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,authoryear,1p,times]{elsarticle}
+%% \documentclass[final,authoryear,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,3p,times]{elsarticle}
+%% \documentclass[final,authoryear,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,5p,times]{elsarticle}
+%% \documentclass[final,authoryear,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon (default)
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   authoryear - selects author-year citations (default)
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%   longnamesfirst  -  makes first citation full author list
+%%
+%% \biboptions{longnamesfirst,comma}
+
+% \biboptions{}
+
+\journal{Data Science Journal: Practice Paper}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%\author{Elizabeth Gooch\corref{cor1}\fnref{label2}}
+%\author{Eric Eckstrand}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Making Open-Access Data More Accessible: Learnings from Harnessing GDELT 2.0 Queries for the General Audience
+}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author[add1]{Elizabeth Gooch}
+\ead{elizabeth.gooch@nps.edu}
+\author[add2]{Eric Eckstrand}
+\ead{eric.eckstrand@nps.edu}
+
+\address[add1]{Defense Resources Management Institute, Naval Postgraduate School}
+\address[add2]{Data Science Analytics Group, Naval Postgraduate School}
+
+\begin{abstract}
+%% Text of abstract
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{sec:intro}
+
+We are writing this practice piece to outline the steps that we took to make a large and, arguably important, a portion of Global Database Events Locations and Time (GDELT) 2.0 more accessible to a general audience \citep{GDELT2015, GDELT2020}. We believe that the steps we took with GDELT 2.0 can be generalized to other open-access big data. 
+
+Here, we make our first assumption for this project. We think that if the open-access data was more approachable for social science researchers, journalists, and other interested parties without coding skills, then, through their analyses the world may benefit from the uniting of technical and subject matter knowledge. The relative lack of publications, particularly social science publication based on GDELT 2.0 in Google Scholar may be evidence to support our assumption. 
+
+The problem is that many open-access data contain a lot of information that analysts would be interested in wielding but the data is inaccessible to those without technical computers science skills such as data wrangling, data management, data storage, and programming skills. Open-access data or other forms of non-proprietary data is becoming an increasingly prevalent phenomenon due to greater storage power and increased data collection opportunities. Many of these open-access datasets are very large. Application of these data products for a better understanding of the world, however, requires analysis. Analysts with subject matter expertise, however, often do not also have the data wrangling skills to wield the open-access datasets. It is an either-or problem. Either a researcher has subject matter expertise on data subject or a researcher has computer science expertise on how to deftly manipulate the open-access data.
+
+This is the case with GDELT 2.0. GDELT offers the broadest collection of global new articles available today. Additionally, GDELT curates the data by offering algorithm-based variables based on text analysis that provided deeper insight into the emotional tone of articles as well as the topics addressed. While GDELT has undertaken steps to make the dataset more accessible through a speedy interface via the Google BigQuery cloud platform, the GUI still requires the user to query in SQL language. Moreover, there are other data quality issues embedded within the data collection structure that would corrupt analyses for user without advanced data management skills. 
+
+Non-technical researchers could breach these technical hurdles themselves by cultivating interdisciplinary teams of subject matter experts and data scientists. However, not every analyst has this option. For one, it requires the development of long-term, professional relationships. In academia, interdisciplinary research may be stifled by the incentive structure of department promotion which rewards publication within the field. In journalism, the role of data scientists is uncommon. Not to mention, the inaccessibility of research team creation at earlier stages of schooling, i.e. science fair projects, masters’ thesis, etc. Like our team, which is supported by the U.S. Department of Defense, interdisciplinary teams may be more possible that the government and private-sector research are able to create research environments that sustain interdisciplinary teams.
+
+As one of the rare interdisciplinary teams made up of data scientists, economists, and political scientists, our experience propelled us towards developing a web interface in which the data scientists have already completed the wrangling and at the second stage, the analyst (at various skill levels of data management) can explore the open-access data for which they would otherwise have been unable to tap into due to their poorly developed programming ability and access to data storage frameworks. 
+
+If an interdisciplinary team is a fundamental answer to drawing useful analysis from open-access big data, then, in a sense, we design a working team but temporarily spaced out - a two-stage process. The computer scientists begin the process by focusing on data and data relations that would interest analysts and develop a user interface. Afterward, the subject experts or subject matter interested researchers can conduct analyses on the available data through the interface. 
+
+\section{Data: GDELT details}
+The 2.0 version of GDELT offers three tables: event, event mentions, and global knowledge graph (GKG). Together, these tables provide characteristics of global events and all of the reporting on those events. The events table is small in size and content, including world events at the two actor observations. Two actors is an important characteristic of how global news dataset usually classify events. One event, to us, as members of world society, will likely be included in a data table like events as more than two event observations depending on the pairwise interaction of participating actors. 
+
+The event mention table draws on the events observations from the events table, capturing each news article published about an event. While the events table produced by GDELT 2.0 has analogs such as.., the event mentions table is a unique offering from GDELT. No other news collection organization records all subsequent articles published about a global event. Typically, only the first article to report the event is captured in other global news data products. The GKG table is also a special contribution of GDELT to the global research community but remains the hardest to access, at more than 1 TB of information over the past five years.
+
+Linking across the three tables of GDELT 2.0 is the feature that is most useful about the GDELT. But the computing power required to filter and merge data from these three tables is large. For example, an interesting question can be asked of the global media and GDELT can provide a snapshot of an answer. For example, someone may want to know what portion of Chinese activities located in West African nations are agricultural versus economic? 
+
+\section{Conceptual Framework}
+\label{sec:concept}
+
+\subsection{Subsetting the Dataset}
+\label{sec:subset}
+A fundamental characteristic of the open-access data that we are dealing with is that it is enormous. The computer scientist team knows that large-scale data management requires storage options that are costly. Creating a useful subset of the full dataset should be the first step for the team. 
+
+We chose a portion of the open-access data that will be most attractive to analysts. To illustrate this consideration, suppose as a computer scientist team, you had access to a hypothetical dataset known to house all data in the whole world. What analysts would be attracted to your project? Many analysts would be overwhelmed. And the ones that did attempt to use the interface you created for this broad dataset would choose to look into narrow questions. At this step, we suggest starting off with an attractive narrow yet insightful subset of the overall open-access dataset.
+
+For GDELT 2.0, we chose to focus on China in the media, specifically, articles addressing events in which the country of origin of the actor in an event in from China. Since 2013, Chinese economic and diplomatic overseas activities have surged with the national Belt and Road strategy. Not only is China aboard is a key topic in recent global news, but also the years of data that GDELT 2.0 offers, 2015-2020, coincided well with the onset of the Belt and Road initiative. Moreover, Chinese influence abroad is a central component of the U.S. National Security Strategy since 2018 and our initial funding is from the Department of Defense interests.
+
+To further refine the subset of the data that we made available to non-technical users, we exclude variables that we deemed unnecessary because of repetitiveness or those made obsolete by our assumptions in the construction of the subset. 
+
+\subsection{Addressing Analytical Problems} 
+GDELT 2.0 has one serious analytical problem in that the origin of global media changes over time. This means, for example, that sources contributing to global media in 2020 are larger in number than in 2016. What is problematic about this characteristic of GDELT, is not just that the global media is expanding, but that researchers do not why or how it is expanding and the trends in expansion may affect the conclusions they draw from their analyses. We addressed this issue by confining reporters to a stable list. 
+
+The data science teams should also highlight the important variables for analysis quality. For GDELT 2.0 the confidence level for which the event mention is categorized is important. Confidence level runs from 0 to 100, where 0 means that GDELT categorized any article that seems to link to the event at all as linked to the event. While a confidence level of 100 means that GDELT is certain that the article links to the event that it is coded with. Therefore, the subset of data at the 0 confidence level is the largest containing all events at higher confidence levels.  
+
+Along the same lines, as a data science team, it is important to omit problematic observations. Here is where the team is making another judgment call that should be made clear to the non-technical user. Our experience with GDELT offers an illustrative example. The average length of many articles was one sentence. This short article is not what an analyst expects. The analyst expects to be tallying news articles. In GDELT 2.0, for example, one of the top reporters in the full dataset is iHeart radio. This is not the source that an analyst on China is interested in citing for their research. Only data-savvy analysts would be able to identify iHeart radio observations out at the event mention-level for removal, let alone if they had already merged with the GKG, then the iHeart radio computing power would be eating up the precious resources of the filter and merge function. 
+
+\subsection{Creating Value-added}
+In GDELT 2.0, the media source identification is not of primary concern for GDELT, but is if researchers wanted to draw conclusions such as what is the average opinion from the Ghanian media on the in-country Chinese activities? To surmise the source origin, the URL has to be manually, visually sorted by the backend data scientist. Recording the range of sources on which the data subset is based is certified by the web application created and the process and outcomes are presented in a transparent nature on the homepage for the project. This is also a step of cleaning the data but we cleaned out observations that could hurt the analysts’ research goals.
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%%
+%%  \citet{key}  ==>>  Jones et al. (1990)
+%%  \citep{key}  ==>>  (Jones et al., 1990)
+%%
+%% Multiple citations as normal:
+%% \citep{key1,key2}         ==>> (Jones et al., 1990; Smith, 1989)
+%%                            or  (Jones et al., 1990, 1991)
+%%                            or  (Jones et al., 1990a,b)
+%% \cite{key} is the equivalent of \citet{key} in author-year mode
+%%
+%% Full author lists may be forced with \citet* or \citep*, e.g.
+%%   \citep*{key}            ==>> (Jones, Baker, and Williams, 1990)
+%%
+%% Optional notes as:
+%%   \citep[chap. 2]{key}    ==>> (Jones et al., 1990, chap. 2)
+%%   \citep[e.g.,][]{key}    ==>> (e.g., Jones et al., 1990)
+%%   \citep[see][pg. 34]{key}==>> (see Jones et al., 1990, pg. 34)
+%%  (Note: in standard LaTeX, only one note is allowed, after the ref.
+%%   Here, one note is like the standard, two make pre- and post-notes.)
+%%
+%%   \citealt{key}          ==>> Jones et al. 1990
+%%   \citealt*{key}         ==>> Jones, Baker, and Williams 1990
+%%   \citealp{key}          ==>> Jones et al., 1990
+%%   \citealp*{key}         ==>> Jones, Baker, and Williams, 1990
+%%
+%% Additional citation possibilities
+%%   \citeauthor{key}       ==>> Jones et al.
+%%   \citeauthor*{key}      ==>> Jones, Baker, and Williams
+%%   \citeyear{key}         ==>> 1990
+%%   \citeyearpar{key}      ==>> (1990)
+%%   \citetext{priv. comm.} ==>> (priv. comm.)
+%%   \citenum{key}          ==>> 11 [non-superscripted]
+%% Note: full author lists depends on whether the bib style supports them;
+%%       if not, the abbreviated list is printed even when full requested.
+%%
+%% For names like della Robbia at the start of a sentence, use
+%%   \Citet{dRob98}         ==>> Della Robbia (1998)
+%%   \Citep{dRob98}         ==>> (Della Robbia, 1998)
+%%   \Citeauthor{dRob98}    ==>> Della Robbia
+
+
+%% References with bibTeX database:
+
+\bibliographystyle{elsarticle/elsarticle-harv}
+\bibliography{gbbat_references}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use elsarticle-harv.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have one of the following forms:
+%%   \bibitem[Jones et al.(1990)]{key}...
+%%   \bibitem[Jones et al.(1990)Jones, Baker, and Williams]{key}...
+%%   \bibitem[Jones et al., 1990]{key}...
+%%   \bibitem[\protect\citeauthoryear{Jones, Baker, and Williams}{Jones
+%%       et al.}{1990}]{key}...
+%%   \bibitem[\protect\citeauthoryear{Jones et al.}{1990}]{key}...
+%%   \bibitem[\protect\astroncite{Jones et al.}{1990}]{key}...
+%%   \bibitem[\protect\citename{Jones et al., }1990]{key}...
+%%   \harvarditem[Jones et al.]{Jones, Baker, and Williams}{1990}{key}...
+%%
+
+% \bibitem[ ()]{}
+
+% \end{thebibliography}
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-harv.tex'.
