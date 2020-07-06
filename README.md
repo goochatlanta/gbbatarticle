@@ -12,7 +12,7 @@ The Data Science Journal describes practice papers as:
 > Practice papers should report upon or critique a specific "happening" such as a release of a major study or other notable occurrence related to the journal focus. Authors interested in submitting a practice paper should discuss the content with the editor before submitting a manuscript. Practice papers should describe the finished outputs of a project, or the procedures in operation in an established data system. Practice papers should be no longer than 3,000 words in length.
 
 ## Latex
-We write the article in Latex. 
+We write the article in Latex, `gbbat_manuscript.tex`
 
 Our bibliography will be compiled within Mendeley. When we add new sources to Mendeley, we need to export a new .bib file
-into our repo to replace the current bibliography file (.bib). 
+into our repo to replace the current bibliography file (`gbbat_references.bib`). 
