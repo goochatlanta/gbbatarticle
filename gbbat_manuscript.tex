@@ -124,7 +124,7 @@
 \address[add2]{Data Science Analytics Group, Naval Postgraduate School}
 
 \begin{abstract}
-%% Text of abstract
+This article presents the conceptual and technical framework for our creation of a browser-based access tool that draws on a subset of the massive open-access Global Database Events Locations and Time (GDELT) 2.0. GDELT is an enormous dataset on the global media updating every 15 minutes since March 2015. In theory, the database is a gold-mine of coded data on events and related articles for interested researchers to quantify trends in the world over time and space. However, the size and access limit most potential users ability to utilizer GDELT. We have constructed a user-friendly interface that enables point-and-click queries of a Chinese activities in the media and the subsequent coverage of those events. 
 
 \end{abstract}
 
@@ -138,27 +138,19 @@
 
 \end{frontmatter}
 
-% \linenumbers
+We started off this project with an assumption. We think that if open-access data was more technically approachable for social science researchers, journalists, and other interested parties lacking coding skills, then more analyses would exist to benefit the world. This is a particularly compelling quandry at this time when data is growing exponentially in quantity and topic. In this essay, we outline the steps taken to make a large and, arguably important, a portion of Global Database Events Locations and Time (GDELT) 2.0,  the broadest collection of global new articles available today, more accessible to a general audience \citep{GDELT2015, GDELT2020}. We developed a tool called GDELT Browser-Based Access Tool, or GBBAT to non-technical users to query a GDELT. We believe that the ideas we used to creating GBBAT are generalizable to other open-access big data.  
 
-%% main text
-\section{Introduction}
-\label{sec:intro}
+The rest of the paper is organized as follows. In the next section, we preview the major take-aways from our experience developing GBBAT. Section \ref{sec:data} provides a brief introduction to GDELT data. In section \ref{sec:concept}, we review the conceptual framework for creating GBBAT and in section \ref{sec:tech} we detail the technical consideration and quandries we faced during the app's development. Section \ref{sec:conclusion} concludes.
 
-We are writing this practice piece to outline the steps that we took to make a large and, arguably important, a portion of Global Database Events Locations and Time (GDELT) 2.0 more accessible to a general audience \citep{GDELT2015, GDELT2020}. We believe that the steps we took with GDELT 2.0 can be generalized to other open-access big data. 
+\section{Preview of Results}
+\label{sec:preview}
+Our analysis is broken into conceptual and a technical components. The learning for our readers also can be divided along these line.  
 
-Here, we make our first assumption for this project. We think that if the open-access data was more approachable for social science researchers, journalists, and other interested parties without coding skills, then, through their analyses the world may benefit from the uniting of technical and subject matter knowledge. The relative lack of publications, particularly social science publication based on GDELT 2.0 in Google Scholar may be evidence to support our assumption. 
+\section{Data: GDELT Details}
+\label{sec:data}
 
-The problem is that many open-access data contain a lot of information that analysts would be interested in wielding but the data is inaccessible to those without technical computers science skills such as data wrangling, data management, data storage, and programming skills. Open-access data or other forms of non-proprietary data is becoming an increasingly prevalent phenomenon due to greater storage power and increased data collection opportunities. Many of these open-access datasets are very large. Application of these data products for a better understanding of the world, however, requires analysis. Analysts with subject matter expertise, however, often do not also have the data wrangling skills to wield the open-access datasets. It is an either-or problem. Either a researcher has subject matter expertise on data subject or a researcher has computer science expertise on how to deftly manipulate the open-access data.
+GDELT curates the data via algorithm-based variables based on text analysis that provided deeper insight into the emotional tone of articles as well as the topics addressed. While GDELT has undertaken steps to make the dataset more accessible through a speedy interface via the Google BigQuery cloud platform, the GUI still requires the user to query in SQL language. Additionally, there are other data quality issues embedded within the data collection structure that would corrupt analyses for user without advanced data management skills. 
 
-This is the case with GDELT 2.0. GDELT offers the broadest collection of global new articles available today. Additionally, GDELT curates the data by offering algorithm-based variables based on text analysis that provided deeper insight into the emotional tone of articles as well as the topics addressed. While GDELT has undertaken steps to make the dataset more accessible through a speedy interface via the Google BigQuery cloud platform, the GUI still requires the user to query in SQL language. Moreover, there are other data quality issues embedded within the data collection structure that would corrupt analyses for user without advanced data management skills. 
-
-Non-technical researchers could breach these technical hurdles themselves by cultivating interdisciplinary teams of subject matter experts and data scientists. However, not every analyst has this option. For one, it requires the development of long-term, professional relationships. In academia, interdisciplinary research may be stifled by the incentive structure of department promotion which rewards publication within the field. In journalism, the role of data scientists is uncommon. Not to mention, the inaccessibility of research team creation at earlier stages of schooling, i.e. science fair projects, masters’ thesis, etc. Like our team, which is supported by the U.S. Department of Defense, interdisciplinary teams may be more possible that the government and private-sector research are able to create research environments that sustain interdisciplinary teams.
-
-As one of the rare interdisciplinary teams made up of data scientists, economists, and political scientists, our experience propelled us towards developing a web interface in which the data scientists have already completed the wrangling and at the second stage, the analyst (at various skill levels of data management) can explore the open-access data for which they would otherwise have been unable to tap into due to their poorly developed programming ability and access to data storage frameworks. 
-
-If an interdisciplinary team is a fundamental answer to drawing useful analysis from open-access big data, then, in a sense, we design a working team but temporarily spaced out - a two-stage process. The computer scientists begin the process by focusing on data and data relations that would interest analysts and develop a user interface. Afterward, the subject experts or subject matter interested researchers can conduct analyses on the available data through the interface. 
-
-\section{Data: GDELT details}
 The 2.0 version of GDELT offers three tables: event, event mentions, and global knowledge graph (GKG). Together, these tables provide characteristics of global events and all of the reporting on those events. The events table is small in size and content, including world events at the two actor observations. Two actors is an important characteristic of how global news dataset usually classify events. One event, to us, as members of world society, will likely be included in a data table like events as more than two event observations depending on the pairwise interaction of participating actors. 
 
 The event mention table draws on the events observations from the events table, capturing each news article published about an event. While the events table produced by GDELT 2.0 has analogs such as.., the event mentions table is a unique offering from GDELT. No other news collection organization records all subsequent articles published about a global event. Typically, only the first article to report the event is captured in other global news data products. The GKG table is also a special contribution of GDELT to the global research community but remains the hardest to access, at more than 1 TB of information over the past five years.
@@ -167,6 +159,9 @@ Linking across the three tables of GDELT 2.0 is the feature that is most useful 
 
 \section{Conceptual Framework}
 \label{sec:concept}
+GDELT has a problem that plagues many open-access databases. The database contains a lot of information that analysts would be interested in wielding but the data is inaccessible to those without technical computers science skills such as data wrangling, data management, data storage, and programming skills. Open-access data or other forms of non-proprietary data is becoming an increasingly prevalent phenomenon due to greater storage power and increased data collection opportunities. Many of these open-access datasets are very large. Application of these data products for a better understanding of the world, however, requires analysis. Analysts with subject matter expertise, however, often do not also have the data wrangling skills to wield the open-access datasets. It is an either-or problem. Either a researcher has subject matter expertise on data subject or a researcher has computer science expertise on how to deftly manipulate the open-access data.
+
+Here is one way to think about what we are doing: If an interdisciplinary team is a fundamental answer to drawing useful analysis from open-access big data, then, in a sense, we design a working team that is not contemporanous but instead is a multi-stage process. First, the political economy expertise narrows the topical focus of GDELT. Next, the computer scientists begin the process by focusing on data and data relations that would interest analysts and develop a user interface. Finally, interested researchers can conduct analyses on the available data to address subject matter issues through the interface. 
 
 \subsection{Subsetting the Dataset}
 \label{sec:subset}
@@ -179,6 +174,7 @@ For GDELT 2.0, we chose to focus on China in the media, specifically, articles a
 To further refine the subset of the data that we made available to non-technical users, we exclude variables that we deemed unnecessary because of repetitiveness or those made obsolete by our assumptions in the construction of the subset. 
 
 \subsection{Addressing Analytical Problems} 
+\label{sec:problems}
 GDELT 2.0 has one serious analytical problem in that the origin of global media changes over time. This means, for example, that sources contributing to global media in 2020 are larger in number than in 2016. What is problematic about this characteristic of GDELT, is not just that the global media is expanding, but that researchers do not why or how it is expanding and the trends in expansion may affect the conclusions they draw from their analyses. We addressed this issue by confining reporters to a stable list. 
 
 The data science teams should also highlight the important variables for analysis quality. For GDELT 2.0 the confidence level for which the event mention is categorized is important. Confidence level runs from 0 to 100, where 0 means that GDELT categorized any article that seems to link to the event at all as linked to the event. While a confidence level of 100 means that GDELT is certain that the article links to the event that it is coded with. Therefore, the subset of data at the 0 confidence level is the largest containing all events at higher confidence levels.  
@@ -188,10 +184,11 @@ Along the same lines, as a data science team, it is important to omit problemati
 \subsection{Creating Value-added}
 In GDELT 2.0, the media source identification is not of primary concern for GDELT, but is if researchers wanted to draw conclusions such as what is the average opinion from the Ghanian media on the in-country Chinese activities? To surmise the source origin, the URL has to be manually, visually sorted by the backend data scientist. Recording the range of sources on which the data subset is based is certified by the web application created and the process and outcomes are presented in a transparent nature on the homepage for the project. This is also a step of cleaning the data but we cleaned out observations that could hurt the analysts’ research goals.
 
+We foresee the manual data cleaning of press sources as one of the major bottlenecks. However, limiting the sources addresses the problem highlighted in \ref{sec:problems} and makes our data product more useable. 
 
 \section{Technical Description and Design Decisions}
+\label{sec:tech}
 In this section we provide a technical description of the browser-based exploration tool we developed, which sits on top of GDELT data. In some cases, we decided it was preferable to choose one technical implementation over multiple, competing implementations. In these cases, we will provide our rationale for the choices we made.
-In subsequent sections, we will refer to the tool that we developed as the GDELT Browser-Based Access Tool, or GBBAT.
 
 \subsection{Data Source}
 In the process of recording real-world events, as GDELT does, the information that is collected is often kept in a persistent structure. In the event that power is removed from the system holding recorded events, existing information is not lost. Keeping data in a persisted state, such as this, can also facilitate the transfer of information from one party to another. There are numerous persistence schemes available for storing data. GDELT data are persisted in two, primary ways.  First, the data is available in 15-minute intervals, starting in February of 2015 and proceeding until the present day, from the GDELT project website. The master list of all the files produced by the project can be downloaded from the following URL: http://data.gdeltproject.org/gdeltv2/masterfilelist.txt. Each 15-minute interval is formatted in a comma-separated value (CSV) file, which is then compressed. To obtain data for an entire day, for example, you can download 96 separate, zip-compressed CSV files. A naming convention for files is used, which makes it easy to select a specific 15-minute interval. The name of a files starts with a timestamp and is followed by the desired GDELT table, and is terminated with the ".csv.zip" extension. A specific 15-minute interval could be downloaded by accessing the URL in this format: http://data.gdeltproject.org/gdeltv2/YYYYMMDDHHHHMM.[gkg|mentions|export].csv.zip.
@@ -217,6 +214,11 @@ The following figures highlight the basic functionality of the GBBAT tool.
 \section{Technical Recommendations}
 Originally, we attempted to take a snapshot of the GDELT data set and store it in a MySQL database. The combined events, event mentions, and gkg tables consumed over 12TB. These tables proved unwieldy, in terms of query speed. We created table indexes in order to improve query speed, but the data preparation steps described in section 4.2 and the filter operations described in section 4.3 did not satisfy our end-user latency requirements. Additionally, there was a larger cost burden associated with storing this large data set and maintaining it up-to-date in our own computing infrastructure when compared to using BigQuery in GCP. In the latter setup, data storage costs are free, and the database is automatically updated and maintained by the GDELT organization. There is a cost associated with performing the daily data preparation steps outlined in section 4.2, but these can be anticipated are cheaper than the MySQL solution.      
 
+\section{Concluding Remarks}
+\label{sec:conclusion}
+Non-technical researchers can breach technical hurdles themselves by cultivating interdisciplinary teams of subject matter experts and data scientists. However, not every analyst has this option. For one, it requires the development of long-term, professional relationships. In academia, interdisciplinary research may be stifled by the incentive structure of department promotion which rewards publication within the field. In journalism, the role of data scientists is uncommon. Not to mention, the inaccessibility of research team creation at earlier stages of schooling, i.e. science fair projects, masters’ thesis, etc. Like our team, which is supported by the U.S. Department of Defense, interdisciplinary teams may be more possible that the government and private-sector research are able to create research environments that sustain interdisciplinary teams.
+
+Our team is uncommon in that is it comprised of data scientists, economists, and political scientists. It is likely that our mish-mash of experience propelled us towards developing a web interface in which the data scientists have already completed the wrangling and at the second stage, the analyst (at various skill levels of data management) can explore the open-access data for which they would otherwise have been unable to tap into due to their poorly developed programming ability and access to data storage frameworks. 
 
 
 %% The Appendices part is started with the command \appendix;
