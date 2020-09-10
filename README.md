@@ -34,6 +34,7 @@ Initially, I planned for us to write a practice paper for the Data Science Journ
 > - Motivation
 > - Benefits and Disadvantages
 > - Comparative Cost/computing power trade-off between AWS/MySQL and BigQuery
+> - Optimizing BigQuery use
 6. Conclusion
 
 ## Figures/graphics
