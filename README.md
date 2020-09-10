@@ -1,7 +1,7 @@
 # GBBAT 
 
 ## Goal
-Writing a practice paper for the Data Science Journal on our creation of GBBAT.
+Began research by writing a practice paper for the Data Science Journal on our creation of GBBAT.
 
 The editor Mark Parsons suggested that the following makes a good practice paper.
 
@@ -10,6 +10,8 @@ The editor Mark Parsons suggested that the following makes a good practice paper
 The Data Science Journal describes practice papers as: 
 
 > Practice papers should report upon or critique a specific "happening" such as a release of a major study or other notable occurrence related to the journal focus. Authors interested in submitting a practice paper should discuss the content with the editor before submitting a manuscript. Practice papers should describe the finished outputs of a project, or the procedures in operation in an established data system. Practice papers should be no longer than 3,000 words in length.
+
+However, the scope of the research is broader.
 
 ## Latex
 We write the article in Latex, `gbbat_manuscript.tex`
