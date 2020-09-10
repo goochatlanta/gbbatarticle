@@ -36,6 +36,14 @@ Initially, I planned for us to write a practice paper for the Data Science Journ
 > - Comparative Cost/computing power trade-off between AWS/MySQL and BigQuery
 6. Conclusion
 
+## Figures/graphics
+
+1. Visualization of three tables' relations within GDELT
+2. China and sources percentage of GDELT tables
+3. Predicted accumulation of usable data tables over time and as sources are added
+4. GUI of user access
+5. Comparison of computing time and cost from prototype to predicted size of final versions between AWS/MySQL and BigQuery.
+
 # Other resources
 ## DSJ Practice Paper
 The editor Mark Parsons suggested that the following makes a good practice paper.
